@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --da-bg-light: #f3f5f5;
+  --da-bg-soft: #dceeed;
+  --da-bg-dark: #111719;
+  --da-bg-dark-soft: #193134;
+
+  --da-text: #233236;
+  --da-text-soft: #617477;
+  --da-text-dark: #eef7f7;
+
+  --da-turquoise: #39c9c9;
+  --da-turquoise-soft: #8ee5e2;
+  --da-grey: #d9dddd;
+
+  --da-panel-light: rgba(255, 255, 255, 0.72);
+  --da-panel-dark: rgba(27, 36, 39, 0.78);
+
+  --da-border-light: rgba(57, 201, 201, 0.24);
+  --da-border-dark: rgba(142, 229, 226, 0.20);
+
+  --da-shadow-light: 0 28px 80px rgba(44, 71, 74, 0.14);
+  --da-shadow-dark: 0 28px 80px rgba(0, 0, 0, 0.32);
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif !important;
+  color: var(--da-text) !important;
+}
+
+main {
+  min-height: 100vh !important;
+  background:
+    radial-gradient(circle at 15% 18%, rgba(57, 201, 201, 0.20), transparent 28%),
+    radial-gradient(circle at 82% 24%, rgba(217, 221, 221, 0.65), transparent 32%),
+    linear-gradient(135deg, var(--da-bg-light) 0%, var(--da-bg-soft) 48%, #f8f9f8 100%) !important;
+}
+
+.dark main {
+  background:
+    radial-gradient(circle at 15% 18%, rgba(57, 201, 201, 0.20), transparent 30%),
+    radial-gradient(circle at 82% 24%, rgba(142, 229, 226, 0.10), transparent 34%),
+    linear-gradient(135deg, var(--da-bg-dark) 0%, var(--da-bg-dark-soft) 52%, #0a0d0f 100%) !important;
+  color: var(--da-text-dark) !important;
+}
+
+#chat-input {
+  max-width: 930px !important;
+  min-height: 118px !important;
+  margin: 38px auto 34px auto !important;
+  padding: 18px 22px !important;
+
+  border-radius: 34px !important;
+  border: 1px solid var(--da-border-light) !important;
+  background: var(--da-panel-light) !important;
+  box-shadow: var(--da-shadow-light) !important;
+  backdrop-filter: blur(18px) !important;
+
+  display: flex !important;
+  align-items: center !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.dark #chat-input {
+  border: 1px solid var(--da-border-dark) !important;
+  background: var(--da-panel-dark) !important;
+  box-shadow: var(--da-shadow-dark) !important;
+}
+
+#chat-input::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(120deg, rgba(255,255,255,0.22), transparent 34%),
+    linear-gradient(90deg, rgba(57,201,201,0.08), rgba(217,221,221,0.12));
+  pointer-events: none;
+}
+
+#chat-input textarea,
+#chat-input [contenteditable="true"] {
+  min-height: 72px !important;
+  width: 100% !important;
+
+  display: flex !important;
+  align-items: center !important;
+
+  padding: 0 22px !important;
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-size: 1.08rem !important;
+  font-weight: 500 !important;
+  line-height: 72px !important;
+  color: var(--da-text) !important;
+  text-align: center !important;
+}
+
+.dark #chat-input textarea,
+.dark #chat-input [contenteditable="true"] {
+  color: var(--da-text-dark) !important;
+}
+
+#chat-input textarea::placeholder,
+#chat-input [contenteditable="true"]:empty:before,
+.empty\:before\:text-muted-foreground:empty:before {
+  content: "Raccontami il tuo spazio ideale..." !important;
+  color: var(--da-text-soft) !important;
+  opacity: 0.95 !important;
+
+  font-size: 1.08rem !important;
+  font-weight: 500 !important;
+  line-height: 72px !important;
+  text-align: center !important;
+}
+
+.dark #chat-input textarea::placeholder,
+.dark #chat-input [contenteditable="true"]:empty:before,
+.dark .empty\:before\:text-muted-foreground:empty:before {
+  color: #b8d6d6 !important;
+}
+
+#chat-input button {
+  border-radius: 999px !important;
+  background: linear-gradient(135deg, var(--da-turquoise), #68dada) !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 14px 34px rgba(57, 201, 201, 0.32) !important;
+  transition: transform 0.2s ease, filter 0.2s ease !important;
+}
+
+#chat-input button:hover {
+  transform: translateY(-1px) !important;
+  filter: brightness(1.04) !important;
+}
+
+#chat-input svg {
+  color: #4e696d !important;
+}
+
+.dark #chat-input svg {
+  color: #c6eeee !important;
+}
+
+[data-testid="message-content"],
+.markdown-body,
+.prose {
+  font-family: "Inter", system-ui, sans-serif !important;
+  line-height: 1.7 !important;
+  letter-spacing: -0.01em !important;
+}
+
+[data-testid="message-content"] {
+  border-radius: 26px !important;
+}
+
+a {
+  color: #168c8d !important;
+}
+
+.dark a {
+  color: var(--da-turquoise-soft) !important;
+}
+
+img[src*="logo"],
+img[src*="Logo"] {
+  max-width: 250px !important;
+  margin: 22px auto 52px auto !important;
+  display: block !important;
+  filter: drop-shadow(0 18px 36px rgba(34, 57, 60, 0.16)) !important;
+}
+
+.dark img[src*="logo"],
+.dark img[src*="Logo"] {
+  filter: drop-shadow(0 18px 36px rgba(0, 0, 0, 0.35)) !important;
+}
+
+header,
+nav {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+@media (max-width: 768px) {
+  #chat-input {
+    max-width: calc(100vw - 28px) !important;
+    min-height: 102px !important;
+    margin-bottom: 22px !important;
+    border-radius: 28px !important;
+  }
+
+  #chat-input textarea,
+  #chat-input [contenteditable="true"],
+  #chat-input textarea::placeholder,
+  #chat-input [contenteditable="true"]:empty:before,
+  .empty\:before\:text-muted-foreground:empty:before {
+    font-size: 0.96rem !important;
+    line-height: 56px !important;
+  }
+
+  img[src*="logo"],
+  img[src*="Logo"] {
+    max-width: 190px !important;
+    margin-bottom: 34px !important;
+  }
+}
