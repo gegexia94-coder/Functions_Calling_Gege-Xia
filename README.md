@@ -31,11 +31,4 @@ L'assistente può usare 3 tool:
 - Che servizio avete per una camera?
 - Consigliami materiali per stile japandi.
 - Prenota una consulenza il 2026-06-05 alle 10:00.
-
-## Come avviare
-
-bash
-
-source .venv/bin/activate
-
-PYTHONPATH=. chainlit run design_assistant/__init__.py -w
+...................................
